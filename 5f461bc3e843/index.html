@@ -89,7 +89,7 @@ $(document).ready(function() {
     }
   },800)
 });
-$(window).resize(function() {
+ function resizer() {
   var ww = $(window).width()
   if(ww < 500) {
     $('.imagefr').css({'width':'calc((100% / 3) - 10px)'});
@@ -98,6 +98,9 @@ $(window).resize(function() {
     $('.imagefr').css({'width':'calc((100% / 4) - 10px)'});
   }
     $('.imagefr').css({'height':$('.imagefr').eq(0).width()})
+ }
+$(window).resize(function() {
+  resizer()
 });
  $('.btn[g="telegram"]').click(function() {
   location.href = 'https://t.me/addstickers/Juanjuanbala_c5a1d17a6ef2' ;
@@ -119,5 +122,5 @@ else {
 }); 
 }
   });
-
+resizer()
 </script>
