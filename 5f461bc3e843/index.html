@@ -70,7 +70,7 @@ body {
     JuanJuanBaLa
   </div>
   <div class="get">
-    <div class="btn">Telegram</div>
+    <div class="btn" g="telegram">Telegram</div>
   </div>
 </div>
 <div class="box"></div>
@@ -99,6 +99,9 @@ $(window).resize(function() {
   }
     $('.imagefr').css({'height':$('.imagefr').eq(0).width()})
 });
+ $('.btn[g="telegram"]').click(function() {
+  location.href = 'https://t.me/addstickers/Juanjuanbala_c5a1d17a6ef2' ;
+ });
 $(document).ready(function() {
     //test 
         if(localStorage.getItem('googlefontNotoSansTCloaded') === '1') {
@@ -116,4 +119,5 @@ else {
 }); 
 }
   });
+
 </script>
