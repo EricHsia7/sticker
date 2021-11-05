@@ -182,6 +182,53 @@ $(document).ready(function() {
     for (var i = 0; i < image_count; i++) {   
  $('.imagefr').eq(i).css({'background':'rgba(0, 0, 0, 0) url(https://erichsia7.github.io/sticker/5f461bc3e843/image/' + (i+1) + '.png)','background-size':'cover','background-position':'center','background-repeat':'no-repeat'}).attr('imgurl','https://erichsia7.github.io/sticker/5f461bc3e843/image/' + (i+1) + '.png');
     }
+   
+   
+   var thid ;
+$('.imagefr').click(function() {
+  thid = String($(this).attr('id')) ;
+  $('body').append('<div class="imgview" style="width:' + $('#' + thid).width() + 'px;height:' + $('#' + thid).height() + 'px;left:' + ($('#' + thid).offset().left-$(window).scrollLeft()) + 'px;top:' + ($('#' + thid).offset().top-$(window).scrollTop()) + 'px;position:fixed;background-image:url(' + $('#' + thid).attr('imgurl') + ');background-color:rgba(0,0,0,0);background-size: cover;background-position: center center; background-repeat: no-repeat no-repeat;opacity:1;transition:0.5s" uy="' + thid + '"></div>');
+  setTimeout(function() {
+    $('div[uy="' + thid + '"]').css({'top':'0','left':'0','width':'100%','height':'100%','background-size':'contain','opacity':'1','background-color':'var(--imgviewbg-color)'});
+    $('#' + thid).css({'opacity':'0','transition':'0s'});
+    
+    
+    
+  },1)
+  
+  
+  
+  setTimeout(function() {
+  $('div[uy="' + thid + '"]').click(function() {
+    var ft = String($(this).attr('uy')) ;
+      setTimeout(function() {
+        var ftw = $('#' + ft).width()
+        var fth = $('#' + ft).height()
+        var ftleft = ($('#' + ft).offset().left-$(window).scrollLeft()) ;
+        var fttop = ($('#' + ft).offset().top-$(window).scrollTop()) ;
+        $('div[uy="' + ft + '"]').css({'width':ftw,'height':fth,'left':ftleft,'top':fttop});
+        $('#' + ft).css({'opacity':'1','transition':'0s'});
+      },1);
+
+     
+
+    setTimeout(function() {
+      $('div[uy="' + ft + '"]').css({'opacity':'0','transition':'0.3s'});
+      
+
+    },500);
+    setTimeout(function() {
+    $('div[uy="' + ft + '"]').remove()
+    },500);
+    
+    });
+  },500);
+  
+});
+   
+   
+   
+   
   },800)
 });
  function resizer() {
