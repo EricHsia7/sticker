@@ -193,7 +193,7 @@ $(document).ready(function() {
    var thid ;
 $('.imagefr').click(function() {
   thid = String($(this).attr('id')) ;
-  $('body').append('<div class="imgview" style="width:' + $('#' + thid).width() + 'px;height:' + $('#' + thid).height() + 'px;left:' + ($('#' + thid).offset().left-$(window).scrollLeft()) + 'px;top:' + ($('#' + thid).offset().top-$(window).scrollTop()) + 'px;position:fixed;background-image:url(' + $('#' + thid).attr('imgurl') + ');background-color:rgba(0,0,0,0);background-size: cover;background-position: center center; background-repeat: no-repeat no-repeat;opacity:1;transition:0.5s" uy="' + thid + '"></div>');
+  $('body').append('<div class="imgview" style="width:' + $('#' + thid).width() + 'px;height:' + $('#' + thid).height() + 'px;left:' + ($('#' + thid).offset().left-$(window).scrollLeft()) + 'px;top:' + ($('#' + thid).offset().top-$(window).scrollTop()) + 'px;position:fixed;background-image:url(' + $('#' + thid).attr('imgurl') + ');background-color:rgba(0,0,0,0);background-size: cover;background-position: center center; background-repeat: no-repeat no-repeat;opacity:1;transition:0.5s;transition-timing-function: ease-in;" uy="' + thid + '"></div>');
   setTimeout(function() {
     $('div[uy="' + thid + '"]').css({'top':'0','left':'0','width':'100%','height':'100%','background-size':'contain','opacity':'1','background-color':'var(--imgviewbg-color)'});
     $('#' + thid).css({'opacity':'0','transition':'0s'});
