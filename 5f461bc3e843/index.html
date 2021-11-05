@@ -180,7 +180,7 @@ for (var i = 0; i < image_count; i++) {
 $(document).ready(function() {
   setTimeout(function() {
     for (var i = 0; i < image_count; i++) {   
- $('.imagefr').eq(i).css({'background':'rgba(0, 0, 0, 0) url(https://erichsia7.github.io/sticker/5f461bc3e843/image/' + (i+1) + '.png)','background-size':'cover','background-position':'center','background-repeat':'no-repeat'});
+ $('.imagefr').eq(i).css({'background':'rgba(0, 0, 0, 0) url(https://erichsia7.github.io/sticker/5f461bc3e843/image/' + (i+1) + '.png)','background-size':'cover','background-position':'center','background-repeat':'no-repeat'}).attr('imgurl':'https://erichsia7.github.io/sticker/5f461bc3e843/image/' + (i+1) + '.png)');
     }
   },800)
 });
